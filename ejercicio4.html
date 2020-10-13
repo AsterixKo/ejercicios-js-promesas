@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Enunciado:
+        // Escribe un Promise.all utilizando las promesas del punto 1 y punto 2. ¿Qué ocurre? ¿Se resuelve?
+
+        const miPromesa1 = new Promise((resolve, reject) => {
+            if (true) {
+                resolve('Correcto');
+            } else {
+                reject('Incorrecto');
+            }
+        });
+
+        const miPromesa2 = new Promise((resolve, reject) => {
+            if (false) {
+                resolve('Correcta');
+            } else {
+                reject('Incorrecta');
+            }
+        });
+
+        Promise.all([miPromesa1, miPromesa2])
+            .then(response => {
+                console.log('Respuesta es:', response);
+            })
+            .catch(error => {
+                console.log('El error es:', error);
+            });
+            // Respuesta: Ha fallado por la segunda promesa y si falla una falla el proceso entero
+    </script>
+</body>
+
+</html>

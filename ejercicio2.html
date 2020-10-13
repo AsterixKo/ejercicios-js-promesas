@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Enunciado:
+        // Escribe una promesa que se rechace.
+
+        const miPromesa = new Promise((resolve, reject) => {
+            if (false) {
+                resolve('Correcta');
+            } else {
+                reject('Incorrecta');
+            }
+        });
+
+        miPromesa
+            .then(response => {
+                console.log('Estado de ejecución:', response);
+            })
+            .catch(error => {
+                console.log('Estado de ejecución:', error);
+            });
+    </script>
+</body>
+
+</html>

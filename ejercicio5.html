@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Enunciado:
+        // Escribe un Promise.all utilizando las promesas del punto 1 y punto 3.
+        // ¿Qué ocurre en este caso? ¿Se resuelve?
+
+        const miPromesa1 = new Promise((resolve, reject) => {
+            if (true) {
+                resolve('Correcto');
+            } else {
+                reject('Incorrecto');
+            }
+        });
+
+        const miPromesa3 = new Promise((resolve, reject) => {
+            if (true) {
+                resolve('Juan');
+            } else {
+                reject('Incorrecto');
+            }
+        });
+
+        Promise.all([miPromesa1, miPromesa3])
+            .then(response => {
+                console.log('El resultado es:', response);
+            })
+            .catch(error => {
+                console.log('Estado de ejecución:', error);
+            });
+
+        // Respuesta: se ejecutan las dos promesas y devuelve el resultado cuando tiene todas las ejecuciones del then
+    </script>
+</body>
+
+</html>

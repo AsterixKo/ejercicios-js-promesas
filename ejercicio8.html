@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Enunciado:
+        // Utiliza un Promise.race con las promesas de los puntos 6 y 7.
+
+        const miPromesa1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (true) {
+                    resolve('Correcto1');
+                } else {
+                    reject('Incorrecto1');
+                }
+            }, 5000);
+        });
+
+        const miPromesa2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (true) {
+                    resolve('Correcto2');
+                } else {
+                    reject('Incorrecto2');
+                }
+            }, 5000);
+        });
+
+        Promise.race([miPromesa1, miPromesa2])
+            .then(response => {
+                console.log('El resultado es:', response);
+            })
+            .catch(error => {
+                console.log('Estado de ejecución:', error);
+            });
+    </script>
+</body>
+
+</html>

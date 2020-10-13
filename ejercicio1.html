@@ -7,7 +7,23 @@
 </head>
 <body>
     <script>
-        
+        // Enunciado:
+        // Escribe una promesa que se resuelva correctamente.
+
+        const miPromesa = new Promise((resolve, reject)=>{
+            if(true){
+                resolve('Correcto');
+            }else{
+                reject('Incorrecto');
+            }
+        });
+
+        miPromesa.then(response =>{
+            console.log('Estado de ejecución:', response);
+        })
+        .catch(error=>{
+            console.log('Estado de ejecución:', error);
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Enunciado:
+        // Escribe una promesa que se resuelva correctamente y tenga un
+        // delay de 7 segundos. Debe devolver un mensaje que la identifique.
+
+        const miPromesa = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (true) {
+                    resolve('Correcto');
+                } else {
+                    reject('Incorrecto');
+                }
+            }, 7000);
+        });
+
+        miPromesa
+            .then(response => {
+                console.log('Estado de la ejecución:', response);
+            })
+            .catch(error => {
+                console.log('Error:', response);
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Enunciado:
+        // Escribe una promesa que se resuelva correctamente y resuelva
+        // devolviendo un texto cualquiera. Haz que la llamada a la promesa
+        // utilice 2 o más .then, enlazando el retorno de un .then con el
+        // siguiente. Manipula el texto de un .then al siguiente, haciendo
+        // por ejemplo que el texto pase a estar todo en mayúsculas (puedes
+        // hacer la transformación que prefieras).
+
+        const miPromesa = new Promise((resolve, reject) => {
+            if (true) {
+                resolve('Juan');
+            } else {
+                reject('Incorrecto');
+            }
+        });
+
+        miPromesa
+            .then(response => {
+                return response + ' y María';
+            })
+            .then(response => {
+                return response.toUpperCase();
+            })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log('Estado de ejecución:', error);
+            });
+    </script>
+</body>
+
+</html>
